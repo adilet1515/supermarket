@@ -36,7 +36,6 @@ class IndexView(TemplateView):
         "page_title": "Products index page",
     }
 
-
     def get_context_data(self, **kwargs):
         products = [
             ("Milk", 109),
