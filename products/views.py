@@ -111,7 +111,6 @@ def products_list(request: HttpRequest):
         template_name='products/products-list.html',
         context=context,
     )
-
 class ProductsListView(ListView):
     # model = Product
     queryset = Product.objects.filter(archived=False)
