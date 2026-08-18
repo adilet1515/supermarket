@@ -1,0 +1,18 @@
+{% extends 'products/base.html' %}
+
+{% block title %}
+Product {{ object.name }}
+{% endblock %}
+
+{% block body %}
+    <h1>Product {{  product.name }}</h1>
+    <p>
+    {{ product.description }}
+    </p>
+    <div>
+        <a href=" {% url 'products:products' %} ">Back to products list</a>
+    </div>
+     <div>
+        <a href=" {% url 'products:delete-product' product.pk %} ">Delete product</a>
+    </div>
+{% endblock %}

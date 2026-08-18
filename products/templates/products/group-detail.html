@@ -1,0 +1,21 @@
+{% extends 'products/base.html' %}
+
+{% block title %}
+    Group #{{ group.pk }}
+{%  endblock %}
+
+{% block body %}
+    <h1>Group info</h1>
+    <div>
+    {{ group.name }}
+     <ul>
+         {% for permission in group.permissions.all %}
+             <li>{{ permission.name }}
+                 <code>{{ permission.codename }}</code>
+             </li>
+             {% empty %}
+              <li>No permissions yet!</li>
+         {% endfor %}
+     </ul>
+    </div>
+{%  endblock %}

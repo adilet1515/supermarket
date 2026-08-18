@@ -1,0 +1,29 @@
+{% extends 'products/base.html' %}
+
+{% block title %}
+    Products list
+{%  endblock %}
+
+{% block body %}
+<h1>Products list:</h1>
+
+    <div>
+        <ul>
+            {% for product in object_list %}
+            <li>
+               <div>
+                   <a href="{% url 'products:product-detail' product.pk %}">
+                   {{ product.name }}
+                   </a>
+               </div>
+                <p>{{ product.description }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+       <a href="{% url 'products:create-product' %}">
+       Create a new product
+       </a>
+    </div>
+{%  endblock %}
